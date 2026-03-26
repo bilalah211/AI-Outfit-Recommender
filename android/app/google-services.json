@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "118014846722",
+    "project_id": "ai-outfit-recommender-ap-d7a10",
+    "storage_bucket": "ai-outfit-recommender-ap-d7a10.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:118014846722:android:950ce1c0412d170898441b",
+        "android_client_info": {
+          "package_name": "com.example.ai_outfit_recommender"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA8tn1hpeUBBj00VE2z28Kyb0imK271m0Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
