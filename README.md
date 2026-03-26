@@ -1,16 +1,34 @@
-# ai_outfit_recommender
+# 🧠 AI Outfit Recommender App
 
-A new Flutter project.
+An AI-powered Flutter application that helps users get smart outfit recommendations based on uploaded clothing images. The app uses **Firebase** for backend services and integrates AI to analyze clothing style, color, and category.
 
-## Getting Started
+---
 
-This project is a starting point for a Flutter application.
+## 🚀 Features
 
-A few resources to get you started if this is your first Flutter project:
+- 📸 Upload clothing images from camera or gallery  
+- ☁️ Store images securely using Firebase Storage  
+- 🔥 Save clothing data in Firebase Firestore  
+- 🤖 AI-based outfit recommendation system  
+- 👕 Detect clothing category (shirt, pants, shoes, etc.)  
+- ❤️ Add outfits to favorites  
+- 🔐 User Authentication (Login/Signup)  
+- 📱 Clean and responsive Flutter UI  
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+---
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## 🛠️ Tech Stack
+
+- Flutter (Dart)
+- Firebase Authentication
+- Firebase Firestore
+- Firebase Storage
+- AI API (Gemini)
+
+---
+
+## 📷 Screenshots
+
+![Home Screen](assets/screenshots/home.png)
+![Upload Screen](assets/screenshots/upload.png)
+![Result Screen](assets/screenshots/result.png)
