@@ -1,6 +1,4 @@
-import 'package:ai_outfit_recommender/presentation/views/outfit_details_screen.dart';
 import 'package:flutter/material.dart';
-
 import '../../presentation/views/home_screen.dart';
 import '../../presentation/views/saved_outfit_screen.dart';
 import '../../presentation/views/my_wardrobe_screen.dart';

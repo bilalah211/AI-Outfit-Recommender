@@ -13,5 +13,5 @@ class AppStrings {
 
   //---[GeminiAI ApiKey]---
 
-  static final String geminiAiApiKey = dotenv.env['geminiAiApiKey']!;
+  static final String openRouterApiKey = dotenv.env['openRouterApiKey'] ?? '';
 }

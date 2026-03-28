@@ -15,6 +15,8 @@ class UploadImageVM with ChangeNotifier {
 
   bool get isLoading => _isLoading;
 
+  //---[Public Methods]---
+
   //---[Save Data]---
   Future<void> saveData(
     File imageFile,
@@ -23,9 +25,12 @@ class UploadImageVM with ChangeNotifier {
     String season,
   ) async {
     try {
-      _isLoading = true;
-      notifyListeners();
+      _setLoading(true);
+
+      //---[Upload Image]---
       final imageUrl = await _cloudinaryService.uploadImage(imageFile);
+
+      //---[Create Model]---
       final clothingDetails = ClothingModel(
         id: '',
         image: imageUrl,
@@ -37,8 +42,14 @@ class UploadImageVM with ChangeNotifier {
     } catch (e) {
       throw 'Something Went Wrong';
     } finally {
-      _isLoading = false;
-      notifyListeners();
+      _setLoading(false);
     }
+  }
+
+  //---[Loading Helper]---
+
+  void _setLoading(bool value) {
+    _isLoading = value;
+    notifyListeners();
   }
 }

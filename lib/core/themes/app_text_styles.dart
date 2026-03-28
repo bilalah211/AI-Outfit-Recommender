@@ -12,7 +12,7 @@ class AppTextStyles {
 
   static TextStyle screenTitle = GoogleFonts.poppins(
     fontSize: 19,
-    fontWeight: FontWeight.w600,
+
     color: AppColors.textPrimary,
   );
 

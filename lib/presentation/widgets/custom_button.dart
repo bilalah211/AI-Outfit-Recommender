@@ -25,6 +25,7 @@ class CustomButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
+      behavior: HitTestBehavior.opaque,
       onTap: onTap,
       child: Container(
         height: height,
@@ -33,7 +34,11 @@ class CustomButton extends StatelessWidget {
           color: AppColors.appBar,
           borderRadius: BorderRadius.circular(10),
         ),
-        child: Center(child: isLoading ? CircularProgressIndicator() : child),
+        child: Center(
+          child: isLoading
+              ? CircularProgressIndicator(color: Colors.white)
+              : child,
+        ),
       ),
     );
   }

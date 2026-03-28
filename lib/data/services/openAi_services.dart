@@ -1,65 +1,77 @@
 import 'dart:convert';
+
 import 'package:http/http.dart' as http;
+
+import '../../core/utils/app_strings.dart';
 import '../../core/utils/app_urls.dart';
 import '../models/clothing_model.dart';
 
-class GeminiService {
+class HuggingFaceService {
   Future<Map<String, dynamic>> getRecommendation({
     required List<ClothingModel> wardrobe,
     required String occasion,
     required String weather,
   }) async {
-    final url = Uri.parse(AppUrls.geminiBaseUrl);
+    final url = Uri.parse(AppUrls.openRouterBaseUrl);
 
-    final prompt =
+    String prompt =
         """
-You are a fashion AI stylist.
+You are a fashion assistant.
+
+Wardrobe:
+${wardrobe.map((e) => "- ID: ${e.id}, Category: ${e.category}, Color: ${e.color}, Season: ${e.season}").join("\n")}
 
 Occasion: $occasion
 Weather: $weather
 
-Wardrobe:
-${wardrobe.map((item) => "- ${item.category}, ${item.color}, ${item.season}").join("\n")}
-
-IMPORTANT:
-- You MUST select items ONLY from the given wardrobe categories
-- Do NOT invent new category names
-
-Task:
-Select the BEST outfit combination.
-
-Return ONLY in JSON:
+Return ONLY JSON:
 {
-  "top": "",
-  "bottom": "",
-  "shoes": "",
-  "reason": ""
+  "top": "item_id_here",
+  "bottom": "item_id_here",
+  "shoes": "item_id_here"
 }
 """;
 
     final response = await http.post(
       url,
-      headers: {"Content-Type": "application/json"},
+      headers: {
+        "Authorization": "Bearer ${AppStrings.openRouterApiKey}",
+        "Content-Type": "application/json",
+        "HTTP-Referer": "https://yourapp.com",
+        "X-Title": "Outfit Recommender App",
+      },
       body: jsonEncode({
-        "contents": [
+        "model": "openai/gpt-3.5-turbo",
+        "messages": [
           {
-            "parts": [
-              {"text": prompt},
-            ],
+            "role": "system",
+            "content": "Return ONLY valid JSON, no explanation.",
           },
+          {"role": "user", "content": prompt},
         ],
+        "temperature": 0.7,
       }),
     );
 
+    print("STATUS: ${response.statusCode}");
+    print("BODY: ${response.body}");
+
     if (response.statusCode != 200) {
-      print("ERROR: ${response.body}");
-      throw Exception("Failed to get Gemini response");
+      throw Exception("Failed: ${response.statusCode}");
     }
 
     final data = jsonDecode(response.body);
+    final text = data["choices"][0]["message"]["content"];
 
-    final text = data['candidates'][0]['content']['parts'][0]['text'];
+    String cleanedText = text.trim();
 
-    return jsonDecode(text);
+    if (cleanedText.contains("{")) {
+      cleanedText = cleanedText.substring(
+        cleanedText.indexOf("{"),
+        cleanedText.lastIndexOf("}") + 1,
+      );
+    }
+
+    return jsonDecode(cleanedText);
   }
 }

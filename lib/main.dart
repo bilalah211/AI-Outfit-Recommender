@@ -1,5 +1,5 @@
 import 'package:ai_outfit_recommender/core/utils/app_routes.dart';
-import 'package:ai_outfit_recommender/core/utils/snackbar_helper.dart';
+import 'package:ai_outfit_recommender/core/utils/Flushbar_helper.dart';
 import 'package:ai_outfit_recommender/data/services/firebase_services.dart';
 import 'package:ai_outfit_recommender/presentation/viewModel/my_wardrobe_viewModel.dart';
 import 'package:ai_outfit_recommender/presentation/viewModel/openAI_viewModel.dart';

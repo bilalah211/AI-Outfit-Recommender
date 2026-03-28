@@ -4,7 +4,7 @@ class ClothingModel {
   final String color;
   final String? category;
   final String? season;
-  final bool isFavorite;
+  bool isFavorite;
 
   ClothingModel({
     required this.id,

@@ -32,6 +32,8 @@ dependencies:
   flutter_dotenv: ^5.1.0
   #--Shared Preferences
   shared_preferences: ^2.5.5
+  #--Shimmer Effect
+  shimmer: ^3.0.0
 
 dev_dependencies:
   flutter_test:

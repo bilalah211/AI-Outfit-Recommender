@@ -55,4 +55,17 @@ class FirebaseServices with ChangeNotifier {
       }).toList();
     });
   }
+
+  //---[Get Favorites Outfits From Firebase]---
+
+  Future<List<ClothingModel>> getFavoriteOutfits() async {
+    final outfits = await _db
+        .collection('My Wardrobe')
+        .where('isFavorite', isEqualTo: true)
+        .get();
+
+    return outfits.docs
+        .map((data) => ClothingModel.fromMap(data.id, data.data()))
+        .toList();
+  }
 }

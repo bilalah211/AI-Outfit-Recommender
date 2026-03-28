@@ -8,6 +8,6 @@ class AppUrls {
 
   //---[GeminiAI URLS]---
 
-  static final String geminiBaseUrl =
-      'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${AppStrings.geminiAiApiKey}';
+  static final String openRouterBaseUrl =
+      'https://openrouter.ai/api/v1/chat/completions';
 }

@@ -1,7 +1,10 @@
 import 'package:ai_outfit_recommender/presentation/viewModel/openAI_viewModel.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:shimmer/shimmer.dart';
 import '../../core/themes/app_text_styles.dart';
+import '../../core/utils/Flushbar_helper.dart';
 import '../widgets/custom_appbar.dart';
 import '../widgets/custom_button.dart';
 
@@ -27,7 +30,6 @@ class _RecommendationScreenState extends State<RecommendationScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final vm = Provider.of<OpenAIViewModel>(context, listen: false);
     return Scaffold(
       appBar: CustomAppBar(title: 'Get Recommendation'),
       body: Column(
@@ -103,22 +105,25 @@ class _RecommendationScreenState extends State<RecommendationScreen> {
                   ],
                 ),
                 SizedBox(height: 35),
-                Consumer(
+                Consumer<OpenAIViewModel>(
                   builder: (context, value, child) {
                     return CustomButton(
                       height: MediaQuery.of(context).size.height / 15,
                       width: MediaQuery.of(context).size.width / 1.2,
+                      isLoading: value.isLoading,
+                      onTap: () async {
+                        FocusScope.of(context).unfocus();
+                        print('--- STARTING RECOMMENDATION ---');
+                        await value.getOutfitRecommendation(
+                          selectedOccasion,
+                          selectedWeather,
+                        );
+                        print('--- FINISHED RECOMMENDATION ---');
+                      },
                       child: Text(
                         'Get Outfit',
                         style: AppTextStyles.appTitle.copyWith(fontSize: 18),
                       ),
-                      onTap: () async {
-                        print('BUTTON CLICKED');
-                        await vm.getOutfitRecommendation(
-                          selectedOccasion,
-                          selectedWeather,
-                        );
-                      },
                     );
                   },
                 ),
@@ -147,50 +152,97 @@ class _RecommendationScreenState extends State<RecommendationScreen> {
               print(vm.recommendedImages.length);
 
               if (vm.isLoading) {
-                return Center(child: CircularProgressIndicator());
+                return SizedBox(
+                  height: MediaQuery.of(context).size.height / 7,
+                  child: Shimmer.fromColors(
+                    baseColor: Colors.grey.shade200,
+                    highlightColor: Colors.grey.shade900,
+                    child: GridView.builder(
+                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: 3,
+                      ),
+                      itemCount: 3,
+                      itemBuilder: (context, index) => Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Container(
+                          height: MediaQuery.of(context).size.height / 5,
+
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(15),
+                          ),
+                          child: Container(
+                            height: MediaQuery.of(context).size.height / 1,
+
+                            decoration: BoxDecoration(
+                              border: BoxBorder.all(color: Colors.grey),
+                              borderRadius: BorderRadius.circular(15),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                );
               }
 
               if (vm.recommendedImages.isEmpty) {
-                return Center(child: Text("No outfit found"));
+                return Center(
+                  child: Text(
+                    "No outfit Recommendation Found!",
+                    style: AppTextStyles.screenTitle.copyWith(fontSize: 16),
+                  ),
+                );
               }
 
               return SizedBox(
-                height: MediaQuery.of(context).size.height / 2.8,
-                child: ListView.builder(
+                height: MediaQuery.of(context).size.height / 6,
+                child: GridView.builder(
                   scrollDirection: Axis.horizontal,
                   itemCount: vm.recommendedImages.length,
                   itemBuilder: (context, index) {
                     return Padding(
                       padding: const EdgeInsets.all(8.0),
-                      child: Image.network(
-                        vm.recommendedImages[index],
-                        width: 120,
-                        fit: BoxFit.cover,
+                      child: Container(
+                        decoration: BoxDecoration(
+                          border: BoxBorder.all(color: Colors.grey),
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                        child: Image.network(
+                          vm.recommendedImages[index],
+
+                          fit: BoxFit.cover,
+                        ),
                       ),
                     );
                   },
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 1,
+                  ),
                 ),
               );
             },
           ),
-          SizedBox(height: 25),
+          SizedBox(height: 30),
 
           Consumer<OpenAIViewModel>(
             builder: (context, vm, child) {
               return CustomButton(
                 height: MediaQuery.of(context).size.height / 15,
                 width: MediaQuery.of(context).size.width / 1.2,
-                onTap: vm.recommendedImages.isEmpty
-                    ? null
-                    : () async {
-                        await vm.saveOutfit(selectedOccasion, selectedWeather);
+                onTap: () async {
+                  await vm.saveOutfit(selectedOccasion, selectedWeather);
 
-                        ScaffoldMessenger.of(
-                          context,
-                        ).showSnackBar(SnackBar(content: Text("Outfit Saved")));
-                      },
+                  FlushbarHelperMessage.showMessage(
+                    icon: Icon(Icons.check_circle, color: Colors.white),
+                    color: Colors.white,
+
+                    context: context,
+                    message: 'Outfit Saved',
+                    background: Colors.green,
+                  );
+                },
                 child: vm.isSLoading
-                    ? CircularProgressIndicator()
+                    ? CircularProgressIndicator(color: Colors.white)
                     : Text(
                         "Save Outfit",
                         style: AppTextStyles.appTitle.copyWith(fontSize: 18),
