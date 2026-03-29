@@ -52,6 +52,10 @@ An AI-powered Flutter application that helps users get smart outfit recommendati
 ## 📱 Saved Outfit Screen
 ![Saved Outfit Screen](assets/images/saved.png)
 
+## 📱 Folder Structure
+![Folder Structure](assets/images/folderstructure.png)
+
+
 
 
 
