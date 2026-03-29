@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../../core/themes/app_text_styles.dart';
-import '../../core/utils/helper.dart';
+import '../../core/utils/app_images.dart';
 import '../widgets/custom_appbar.dart';
 import '../widgets/custom_button.dart';
 import '../widgets/custom_container.dart';

@@ -1,6 +1,6 @@
 import 'dart:io';
 import 'package:ai_outfit_recommender/core/utils/app_strings.dart';
-import 'package:ai_outfit_recommender/core/utils/helper.dart';
+import 'package:ai_outfit_recommender/core/utils/app_images.dart';
 import 'package:ai_outfit_recommender/core/utils/Flushbar_helper.dart';
 import 'package:ai_outfit_recommender/core/utils/validators.dart';
 import 'package:ai_outfit_recommender/presentation/viewModel/upload_image_viewModel.dart';

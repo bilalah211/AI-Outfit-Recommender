@@ -17,9 +17,9 @@ class AppTextStyles {
   );
 
   static TextStyle buttonText = GoogleFonts.poppins(
-    fontSize: 16,
-    fontWeight: FontWeight.w600,
-    color: AppColors.buttonText,
+    color: Colors.white,
+    fontSize: 18,
+    fontWeight: FontWeight.w500,
   );
 
   static TextStyle bodyText = GoogleFonts.poppins(

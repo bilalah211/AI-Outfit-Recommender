@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../core/themes/app_colors.dart';
 import '../../core/utils/app_routes.dart';
-import '../../core/utils/helper.dart';
+import '../../core/utils/app_images.dart';
 import '../widgets/card.dart';
 import '../widgets/custom_appbar.dart';
 

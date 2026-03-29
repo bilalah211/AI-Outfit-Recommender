@@ -28,12 +28,14 @@ dependencies:
   http: ^1.6.0
   #--Flushbar
   another_flushbar: ^1.12.32
-  #--For Hiding Api keys
+  #--Api keys
   flutter_dotenv: ^5.1.0
   #--Shared Preferences
   shared_preferences: ^2.5.5
   #--Shimmer Effect
   shimmer: ^3.0.0
+  #--Indicators
+  smooth_page_indicator: ^1.1.0
 
 dev_dependencies:
   flutter_test:
@@ -53,5 +55,6 @@ flutter:
     - assets/splash logos/
     - assets/png/
     - assets/outfits/
+    - assets/onboarding/
     - .env
 

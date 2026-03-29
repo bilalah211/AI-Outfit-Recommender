@@ -20,12 +20,12 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   Future<void> deciderScreen() async {
-    await Future.delayed(Duration(seconds: 3));
+    await Future.delayed(Duration(seconds: 5));
 
     bool isFirstTime = await SharedPreferencesHelper.isFirstTime();
 
     if (isFirstTime) {
-      Navigator.pushNamed(context, AppRoutes.home);
+      Navigator.pushNamed(context, AppRoutes.onboarding);
     } else {
       Navigator.pushReplacementNamed(context, AppRoutes.home);
     }

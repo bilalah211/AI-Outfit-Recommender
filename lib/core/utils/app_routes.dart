@@ -1,3 +1,4 @@
+import 'package:ai_outfit_recommender/presentation/views/onboarding_screen.dart';
 import 'package:flutter/material.dart';
 import '../../presentation/views/home_screen.dart';
 import '../../presentation/views/saved_outfit_screen.dart';
@@ -8,6 +9,8 @@ import '../../presentation/views/upload_image_screen.dart';
 
 class AppRoutes {
   static const String splash = '/';
+  static const String onboarding = '/onboarding';
+
   static const String home = '/home';
   static const String upload = '/upload';
   static const String wardrobe = '/wardrobe';
@@ -34,6 +37,8 @@ class AppRouter {
       case AppRoutes.saved:
         return MaterialPageRoute(builder: (context) => SavedOutFitScreen());
 
+      case AppRoutes.onboarding:
+        return MaterialPageRoute(builder: (context) => OnboardingScreen());
       default:
         return MaterialPageRoute(
           builder: (context) =>
