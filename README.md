@@ -29,9 +29,28 @@ An AI-powered Flutter application that helps users get smart outfit recommendati
 
 ## 📷 Screenshots
 
+## 📱 Splash Screen
 ![Onboarding 1](assets/images/onboard1.png)
-![Onboarding 2](assets/screenshots/onboard2.png)
-![Onboarding 3](assets/screenshots/onboard3.png)
+
+## 📱 Onboarding Screen
+![Onboarding 1](assets/images/onboard1.png)
+![Onboarding 2](assets/images/onboard2.png)
+![Onboarding 3](assets/images/onboard3.png)
+
+## 📱 Home Screen
+![Onboarding 1](assets/images/onboard1.png)
+
+## 📱 Add Outfit Screen
+![Onboarding 1](assets/images/onboard1.png)
+## 📱 My Wardrobe Screen
+![Onboarding 1](assets/images/onboard1.png)
+## 📱 Get Recommendation Screen
+![Onboarding 1](assets/images/onboard1.png)
+## 📱 Saved Outfit Screen
+![Onboarding 1](assets/images/onboard1.png)
+
+
+
 
 ## 🎥 Demo Video
 
