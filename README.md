@@ -30,7 +30,7 @@ An AI-powered Flutter application that helps users get smart outfit recommendati
 ## 📷 Screenshots
 
 ## 📱 Splash Screen
-![Onboarding 1](assets/images/onboard1.png)
+![Onboarding 1](assets/images/splash.png)
 
 ## 📱 Onboarding Screen
 ![Onboarding 1](assets/images/onboard1.png)
@@ -38,16 +38,19 @@ An AI-powered Flutter application that helps users get smart outfit recommendati
 ![Onboarding 3](assets/images/onboard3.png)
 
 ## 📱 Home Screen
-![Onboarding 1](assets/images/onboard1.png)
+![Onboarding 1](assets/images/home.png)
 
 ## 📱 Add Outfit Screen
-![Onboarding 1](assets/images/onboard1.png)
+![Onboarding 1](assets/images/upload.png)
+
 ## 📱 My Wardrobe Screen
-![Onboarding 1](assets/images/onboard1.png)
+![Onboarding 1](assets/images/wardrobe.png)
+
 ## 📱 Get Recommendation Screen
-![Onboarding 1](assets/images/onboard1.png)
+![Onboarding 1](assets/images/get.png)
+
 ## 📱 Saved Outfit Screen
-![Onboarding 1](assets/images/onboard1.png)
+![Onboarding 1](assets/images/saved.png)
 
 
 
