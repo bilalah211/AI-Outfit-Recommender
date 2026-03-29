@@ -29,9 +29,9 @@ An AI-powered Flutter application that helps users get smart outfit recommendati
 
 ## 📷 Screenshots
 
-![Home Screen](assets/screenshots/home.png)
-![Upload Screen](assets/screenshots/upload.png)
-![Result Screen](assets/screenshots/result.png)
+![Onboarding 1](assets/images/onboard1.png)
+![Onboarding 2](assets/screenshots/onboard2.png)
+![Onboarding 3](assets/screenshots/onboard3.png)
 
 ## 🎥 Demo Video
 
