@@ -27,34 +27,26 @@ An AI-powered Flutter application that helps users get smart outfit recommendati
 
 ---
 
-## 📷 Screenshots
+## 📸 App Screenshots
 
-## 📱 Splash Screen
-![Splash Screen](assets/images/splash.png)
+### 🎨 Onboarding & Entry
+| Splash Screen | Onboarding 1 | Onboarding 2 | Onboarding 3 |
+| :---: | :---: | :---: | :---: |
+| <img src="assets/images/splash.png" width="160"> | <img src="assets/images/onboard1.png" width="160"> | <img src="assets/images/onboard2.png" width="160"> | <img src="assets/images/onboard3.png" width="160"> |
 
-## 📱 Onboarding Screen
-![Onboarding 1](assets/images/onboard1.png)
-![Onboarding 2](assets/images/onboard2.png)
-![Onboarding 3](assets/images/onboard3.png)
+<br>
 
-## 📱 Home Screen
-![Home Screen](assets/images/home.png)
+### 👗 Wardrobe & AI Logic
+| Home Screen | Add Outfit | My Wardrobe | AI Recommendations |
+| :---: | :---: | :---: | :---: |
+| <img src="assets/images/home.png" width="160"> | <img src="assets/images/upload.png" width="160"> | <img src="assets/images/wardrobe.png" width="160"> | <img src="assets/images/get.png" width="160"> |
 
-## 📱 Add Outfit Screen
-![Add Outfit Screen](assets/images/upload.png)
+<br>
 
-## 📱 My Wardrobe Screen
-![My Wardrobe Screen](assets/images/wardrobe.png)
-
-## 📱 Get Recommendation Screen
-![Get Recommendation Screen](assets/images/get.png)
-
-## 📱 Saved Outfit Screen
-![Saved Outfit Screen](assets/images/saved.png)
-
-## 📱 Folder Structure
-![Folder Structure](assets/images/folderstructure.png)
-
+### 📁 Results & Architecture
+| Saved Outfits | Folder Structure |
+| :---: | :---: |
+| <img src="assets/images/saved.png" width="180"> | <img src="assets/images/folderstructure.png" width="350"> |
 
 
 
